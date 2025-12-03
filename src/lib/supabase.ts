@@ -1,7 +1,11 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = "https://evtvbxemblcsqkbptujd.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dHZieGVtYmxjc3FrYnB0dWpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwNDQ4ODEsImV4cCI6MjA3NTYyMDg4MX0.f2I2c7H2XCWfzQvzMnFwRJzY_uPZOUZMLHxNckvjnbk";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "https://evtvbxemblcsqkbptujd.supabase.co";
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dHZieGVtYmxjc3FrYnB0dWpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwNDQ4ODEsImV4cCI6MjA3NTYyMDg4MX0.f2I2c7H2XCWfzQvzMnFwRJzY_uPZOUZMLHxNckvjnbk";
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase environment variables. Please check your .env.local file.');
+}
 
 // Create Supabase client instance
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)

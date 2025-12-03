@@ -436,6 +436,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       isPlayingRef.current = false;
       setAudioState(prev => ({ ...prev, isPlaying: false }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [audioState.isLooping, currentConfig, isGenerating]);
 
   // 暂停音频
@@ -523,6 +524,17 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       setCurrentConfig({ ...currentConfig, backgroundAudio: backgroundType });
     }
   }, [generateBackgroundAudio, stopBackgroundAudio, currentConfig]);
+
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      stopAllAudioSources();
+      if (audioContextRef.current) {
+        audioContextRef.current.close();
+        audioContextRef.current = null;
+      }
+    };
+  }, [stopAllAudioSources]);
 
   return (
     <AudioPlayerContext.Provider value={{
