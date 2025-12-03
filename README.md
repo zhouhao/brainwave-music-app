@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Brainwave Music App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A brainwave-inspired music web app that helps you stay focused while you work. Built with React, TypeScript, and Vite, styled with Tailwind CSS, and powered by modern UI primitives.
 
-Currently, two official plugins are available:
+## Screenshot
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Brainwave Music App Screenshot](public/screenshot.png)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Focus-enhancing soundscapes and playlists
+- Clean, responsive UI with dark mode
+- Keyboard-friendly controls and accessible components
+- Fast startup and hot reload via Vite
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React 18 + TypeScript
+- Vite 6
+- Tailwind CSS 3
+- Radix UI primitives and utilities (e.g., Dialog, Tabs, Slider)
+- Additional libs: lucide-react, react-hook-form, zod, recharts
+
+## Getting Started
+
+Prerequisites: Node 18+ and pnpm installed.
+
+1. Install dependencies
+
+```bash
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Start the dev server
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+3. Open the app
+
+Visit http://localhost:5173 (default Vite port) after the dev server starts.
+
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE` if provided, or adapt as needed.
+
+---
+
+Made with focus and flow.
