@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(source ~/.zshrc)"
+      "Bash(source ~/.zshrc)",
+      "Bash(pnpm lint:*)",
+      "Bash(npm run lint:*)",
+      "Bash(echo:*)",
+      "Bash(pnpm eslint:*)",
+      "Bash(pnpm build)"
     ],
     "deny": [],
     "ask": []
