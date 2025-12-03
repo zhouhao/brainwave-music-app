@@ -2,7 +2,7 @@
 
 A brainwave-inspired music web app that helps you stay focused while you work. Built with React, TypeScript, and Vite, styled with Tailwind CSS, and powered by modern UI primitives.
 
-## Screenshot
+## Screenshot (Still buggy)
 
 ![Brainwave Music App Screenshot](public/screenshot.png)
 
