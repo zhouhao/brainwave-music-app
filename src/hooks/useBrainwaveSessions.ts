@@ -97,6 +97,7 @@ export function useBrainwaveSessions() {
     if (user) {
       fetchSessions();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return {

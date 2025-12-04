@@ -156,12 +156,8 @@ const BrainwaveApp: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage: 'url(/images/modern_brainwave_audio_visualization_blue_purple_gradient.jpg)'
-          }}
-        />
+        {/* Animated gradient background - no external image needed */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-indigo-900/30 animate-pulse" />
         <div className="relative px-6 py-16 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
